@@ -1,3 +1,19 @@
 Esse é um pequeno projeto pedido pela Birdie para o processo seletivo em 15/12/2018 para a vaga de Data Scientist.
 
 O intuito é criar uma rotina que classifique uma lista de titulos de um e-commerce em smartphone/não-smartphone.
+
+O projeto foi criado em C, linguagem que atualmente me sinto mais confortável em codar. Foi criado uma TAD para abstrair o problema.
+A TAD consta de uma função que recebe uma ID e um TITULO para cadastrar numa struct composta por um int ID um char* TITULO, um ponteiro
+da própria struct chamado prox e um char chamado eh_smart, que guardará 1 ou 0, dizendo se é smartphone ou se não é smartphone.
+A lista é construida de forma encadeada.
+
+Consta também de uma função classificador_fraco, que usa a primeira palavra de uma lista de string para buscar por produtos. A primeira
+palavra para esse processo foi smartphone. Por ser uma única palavra para classificar todos os produtos que são smartphone, esse requisito
+é muito fraco, vide que muitos dos titulos que são produtos smartphone não tem a palavra em seu titulo.
+
+O segundo metodo, chamado de classificador_medio, usa mais palavras que consta no vetor de string para classificar produtos do tipo 
+smartphone. Algumas delas são 'Android', 'iPhone', 'celular'. E também consta com um vetor de string de palavras bloqueadas, por exemplo
+'capa' de celular, contém a palavra celular mas se refere a capa de proteção, entre outras palavras de bloqueio.
+
+O resultado do programa não foi muito satisfatório, existe um bug que classifica alguns poucos titulos que não contém nenhuma das palavras
+chave, mas por questão de timeline, o programa será entregue dessa forma.
