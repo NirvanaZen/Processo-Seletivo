@@ -13,7 +13,20 @@ palavra para esse processo foi smartphone. Por ser uma única palavra para class
 
 O segundo metodo, chamado de classificador_medio, usa mais palavras que consta no vetor de string para classificar produtos do tipo 
 smartphone. Algumas delas são 'Android', 'iPhone', 'celular'. E também consta com um vetor de string de palavras bloqueadas, por exemplo
-'capa' de celular, contém a palavra celular mas se refere a capa de proteção, entre outras palavras de bloqueio.
+'capa' de celular, contém a palavra celular mas se refere a capa de proteção, entre outras palavras de bloqueio. O resultado foi melhor
+por incluir muitos outros produtos do tipo smartphone, mas devido ao bug, alguns poucos produtos ainda foram classificados como smartphone
+mesmo quando não tem relação nenhuma ao produto.
 
 O resultado do programa não foi muito satisfatório, existe um bug que classifica alguns poucos titulos que não contém nenhuma das palavras
 chave, mas por questão de timeline, o programa será entregue dessa forma.
+
+A TAD pode ser compilado de forma comum, com todos os arquivos na mesma pasta, entre por um terminal na pasta e use os seguintes comandos.
+
+Para compilar o filtro.c, usar o comando gcc -c filtro.c
+Para compilar o Programa.c, usar o comando gcc -o Programa Programa.c filtro.o
+Para rodar o programa basta digitar ./Programa <nome_do_arquivo.extensão>
+
+O arquivo deve ter em cada linha o ID seguido do TITULO somente. A primeira linha sempre será ignorada.
+
+O programa irá gerar dois arquivos.tsv, chamados resultado_fraco e resultado_medio, que é a classificação das duas funções.
+Cada linha constará do ID seguindo da classificação (smartiphone/não-smartphone) e do TÍTULO.
